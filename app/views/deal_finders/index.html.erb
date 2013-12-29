@@ -1,0 +1,29 @@
+<h1>Listing deal_finders</h1>
+
+<table>
+  <tr>
+    <th>Findername</th>
+    <th>Finderid</th>
+    <th>Findertype</th>
+    <th>Finderfovorite?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deal_finders.each do |deal_finder| %>
+  <tr>
+    <td><%= deal_finder.FinderName %></td>
+    <td><%= deal_finder.FinderID %></td>
+    <td><%= deal_finder.FinderType %></td>
+    <td><%= deal_finder.FinderFovorite? %></td>
+    <td><%= link_to 'Show', deal_finder %></td>
+    <td><%= link_to 'Edit', edit_deal_finder_path(deal_finder) %></td>
+    <td><%= link_to 'Destroy', deal_finder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deal finder', new_deal_finder_path %>

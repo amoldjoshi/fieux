@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dealername:</b>
+  <%= @daily_deal.DealerName %>
+</p>
+
+<p>
+  <b>Dealerid:</b>
+  <%= @daily_deal.DealerID %>
+</p>
+
+<p>
+  <b>Dealertype:</b>
+  <%= @daily_deal.DealerType %>
+</p>
+
+<p>
+  <b>Dealerfavorite?:</b>
+  <%= @daily_deal.DealerFavorite? %>
+</p>
+
+
+<%= link_to 'Edit', edit_daily_deal_path(@daily_deal) %> |
+<%= link_to 'Back', daily_deals_path %>

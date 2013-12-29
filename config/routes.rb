@@ -1,4 +1,13 @@
 Fieux::Application.routes.draw do
+  resources :deal_finders
+
+
+  resources :weekly_adds
+
+
+  resources :daily_deals
+
+
   devise_for :users
 
   # The priority is based upon order of creation:

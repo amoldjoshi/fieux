@@ -1,0 +1,33 @@
+<%= form_for(@daily_deal) do |f| %>
+  <% if @daily_deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily_deal.errors.count, "error") %> prohibited this daily_deal from being saved:</h2>
+
+      <ul>
+      <% @daily_deal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :DealerName %><br />
+    <%= f.text_field :DealerName %>
+  </div>
+  <div class="field">
+    <%= f.label :DealerID %><br />
+    <%= f.number_field :DealerID %>
+  </div>
+  <div class="field">
+    <%= f.label :DealerType %><br />
+    <%= f.number_field :DealerType %>
+  </div>
+  <div class="field">
+    <%= f.label :DealerFavorite? %><br />
+    <%= f.check_box :DealerFavorite? %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

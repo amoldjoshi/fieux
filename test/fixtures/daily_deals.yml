@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  DealerName: MyString
+  DealerID: 1
+  DealerType: 1
+  DealerFavorite?: false
+
+two:
+  DealerName: MyString
+  DealerID: 1
+  DealerType: 1
+  DealerFavorite?: false

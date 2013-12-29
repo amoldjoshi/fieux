@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  WeeklyAddName: MyString
+  WeeklyAddID: 1
+  WeeklyAddType: 1
+  WeeklyFavorite?: false
+
+two:
+  WeeklyAddName: MyString
+  WeeklyAddID: 1
+  WeeklyAddType: 1
+  WeeklyFavorite?: false

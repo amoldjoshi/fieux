@@ -1,0 +1,29 @@
+<h1>Listing weekly_adds</h1>
+
+<table>
+  <tr>
+    <th>Weeklyaddname</th>
+    <th>Weeklyaddid</th>
+    <th>Weeklyaddtype</th>
+    <th>Weeklyfavorite?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @weekly_adds.each do |weekly_add| %>
+  <tr>
+    <td><%= weekly_add.WeeklyAddName %></td>
+    <td><%= weekly_add.WeeklyAddID %></td>
+    <td><%= weekly_add.WeeklyAddType %></td>
+    <td><%= weekly_add.WeeklyFavorite? %></td>
+    <td><%= link_to 'Show', weekly_add %></td>
+    <td><%= link_to 'Edit', edit_weekly_add_path(weekly_add) %></td>
+    <td><%= link_to 'Destroy', weekly_add, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Weekly add', new_weekly_add_path %>

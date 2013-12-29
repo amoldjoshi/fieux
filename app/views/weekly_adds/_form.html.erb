@@ -1,0 +1,33 @@
+<%= form_for(@weekly_add) do |f| %>
+  <% if @weekly_add.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@weekly_add.errors.count, "error") %> prohibited this weekly_add from being saved:</h2>
+
+      <ul>
+      <% @weekly_add.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :WeeklyAddName %><br />
+    <%= f.text_field :WeeklyAddName %>
+  </div>
+  <div class="field">
+    <%= f.label :WeeklyAddID %><br />
+    <%= f.number_field :WeeklyAddID %>
+  </div>
+  <div class="field">
+    <%= f.label :WeeklyAddType %><br />
+    <%= f.number_field :WeeklyAddType %>
+  </div>
+  <div class="field">
+    <%= f.label :WeeklyFavorite? %><br />
+    <%= f.check_box :WeeklyFavorite? %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

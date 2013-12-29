@@ -1,0 +1,33 @@
+<%= form_for(@deal_finder) do |f| %>
+  <% if @deal_finder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deal_finder.errors.count, "error") %> prohibited this deal_finder from being saved:</h2>
+
+      <ul>
+      <% @deal_finder.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :FinderName %><br />
+    <%= f.text_field :FinderName %>
+  </div>
+  <div class="field">
+    <%= f.label :FinderID %><br />
+    <%= f.number_field :FinderID %>
+  </div>
+  <div class="field">
+    <%= f.label :FinderType %><br />
+    <%= f.number_field :FinderType %>
+  </div>
+  <div class="field">
+    <%= f.label :FinderFovorite? %><br />
+    <%= f.check_box :FinderFovorite? %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

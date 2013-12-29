@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131228065508) do
+ActiveRecord::Schema.define(:version => 20131229081338) do
+
+  create_table "daily_deals", :force => true do |t|
+    t.string   "DealerName"
+    t.integer  "DealerID"
+    t.integer  "DealerType"
+    t.boolean  "DealerFavorite?"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "deal_finders", :force => true do |t|
+    t.string   "FinderName"
+    t.integer  "FinderID"
+    t.integer  "FinderType"
+    t.boolean  "FinderFovorite?"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -30,5 +48,14 @@ ActiveRecord::Schema.define(:version => 20131228065508) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "weekly_adds", :force => true do |t|
+    t.string   "WeeklyAddName"
+    t.integer  "WeeklyAddID"
+    t.integer  "WeeklyAddType"
+    t.boolean  "WeeklyFavorite?"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
 end

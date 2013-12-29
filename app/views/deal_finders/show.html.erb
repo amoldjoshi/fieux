@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Findername:</b>
+  <%= @deal_finder.FinderName %>
+</p>
+
+<p>
+  <b>Finderid:</b>
+  <%= @deal_finder.FinderID %>
+</p>
+
+<p>
+  <b>Findertype:</b>
+  <%= @deal_finder.FinderType %>
+</p>
+
+<p>
+  <b>Finderfovorite?:</b>
+  <%= @deal_finder.FinderFovorite? %>
+</p>
+
+
+<%= link_to 'Edit', edit_deal_finder_path(@deal_finder) %> |
+<%= link_to 'Back', deal_finders_path %>

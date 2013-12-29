@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  FinderName: MyString
+  FinderID: 1
+  FinderType: 1
+  FinderFovorite?: false
+
+two:
+  FinderName: MyString
+  FinderID: 1
+  FinderType: 1
+  FinderFovorite?: false
