@@ -1,4 +1,12 @@
 Fieux::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/contact"
+  match '/contact', :to => 'pages#contact'
+
+  get "pages/about"
+  match '/about',   :to => 'pages#about'
+	
   resources :deal_finders
 
 
