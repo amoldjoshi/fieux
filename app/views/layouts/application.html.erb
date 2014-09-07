@@ -10,5 +10,6 @@
 
 <%= yield %>
 
+<%= render :partial => ‘layouts/googleanalytics’ if RAILS_ENV == ‘production’ %>
 </body>
 </html>

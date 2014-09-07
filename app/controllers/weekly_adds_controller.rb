@@ -1,9 +1,9 @@
 class WeeklyAddsController < ApplicationController
-  # GET /weekly_adds
+    load_and_authorize_resource
+	# GET /weekly_adds
   # GET /weekly_adds.json
   def index
     @weekly_adds = WeeklyAdd.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @weekly_adds }

@@ -1,5 +1,6 @@
 class DailyDealsController < ApplicationController
-  # GET /daily_deals
+   load_and_authorize_resource #Amol added this dont konw what it does.
+	 # GET /daily_deals
   # GET /daily_deals.json
   def index
     @daily_deals = DailyDeal.all

@@ -1,29 +1,110 @@
-<h1>Listing daily_deals</h1>
+<%- model_class = DailyDeal -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
 
-<table>
-  <tr>
-    <th>Dealername</th>
-    <th>Dealerid</th>
-    <th>Dealertype</th>
-    <th>Dealerfavorite?</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @daily_deals.each do |daily_deal| %>
-  <tr>
-    <td><%= daily_deal.DealerName %></td>
-    <td><%= daily_deal.DealerID %></td>
-    <td><%= daily_deal.DealerType %></td>
-    <td><%= daily_deal.DealerFavorite? %></td>
-    <td><%= link_to 'Show', daily_deal %></td>
-    <td><%= link_to 'Edit', edit_daily_deal_path(daily_deal) %></td>
-    <td><%= link_to 'Destroy', daily_deal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class ="container">
+<div class ="row">
+	<div class ="span4">
+	<table class="table table-striped table-bordered">
+	  <!--<thead>
+	    <tr>
+	      <th><%= model_class.human_attribute_name(:id) %></th>
+	      <th><%= model_class.human_attribute_name(:DealerName) %></th>
+	      <th><%= model_class.human_attribute_name(:targeturl)%></th>
+	      <th><%= model_class.human_attribute_name(:DealerID) %></th>
+	      <th><%= model_class.human_attribute_name(:DealerType) %></th>
+	      <th><%= model_class.human_attribute_name(:IsDealerFavorite) %></th>
+	      <th><%= model_class.human_attribute_name(:created_at) %></th>
+	      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+	    </tr>
+	  </thead>-->
+	  <tbody>
+	    <% @daily_deals.each do |daily_deal| %>
+	    <% i = 0%>
+			<% if daily_deal.DealerID ==1%>	 
+		      <tr>
+				<%if can? :update, daily_deal%>
+		      		<td><%= link_to daily_deal.id, daily_deal_path(daily_deal) %></td>
+		      	<%end%>
+		      	
+		      	<td><%= i = i + 1 %></td>
+		        <td><%= daily_deal.DealerName %></td>
+				<td><%=  link_to('Lets Go!', url_with_protocol(daily_deal.targeturl),:target => :blank, :class => 'btn btn-success')%></td>
+		        <!--<td><%= daily_deal.DealerID %></td>
+		        <td><%= daily_deal.DealerType %></td>
+		        <td><%= daily_deal.IsDealerFavorite %></td>
+		        <td><%=l daily_deal.created_at %></td>-->
+				<%if can? :update, daily_deal%>
+		        <td>
+		          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+		                      edit_daily_deal_path(daily_deal), :class => 'btn btn-mini' %>
+		          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+		                      daily_deal_path(daily_deal),
+		                      :method => :delete,
+		                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+		                      :class => 'btn btn-mini btn-danger' %>
+		         <%end%>
+		        </td>
+		      </tr>
+		      <%end%>
+	    <% end %>
+	  </tbody>
+	</table>
+	</div>
+	
+	<div class = "span4 offset1">
+	 <table class="table table-striped table-bordered">
+	  <!--<thead>
+	    <tr>
+	      <th><%= model_class.human_attribute_name(:id) %></th>
+	      <th><%= model_class.human_attribute_name(:DealerName) %></th>
+	      <th><%= model_class.human_attribute_name(:targeturl)%></th>
+	      <th><%= model_class.human_attribute_name(:DealerID) %></th>
+	      <th><%= model_class.human_attribute_name(:DealerType) %></th>
+	      <th><%= model_class.human_attribute_name(:IsDealerFavorite) %></th>
+	      <th><%= model_class.human_attribute_name(:created_at) %></th>
+	      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+	    </tr>
+	  </thead>-->
+	  <tbody>
+	    <% @daily_deals.each do |daily_deal| %>
+	    <% j = 0 %>
+			<% if daily_deal.DealerID ==2%>	 
+	      <tr>
+			<%if can? :update, daily_deal%>
+	      		<td><%= link_to daily_deal.id, daily_deal_path(daily_deal) %></td>
+	      	<%end%>
+	      	
+	      	<td><%= j = j + 1 %></td>
+	        <td><%= daily_deal.DealerName %></td>
+			<td><%=  link_to('Lets Go!', url_with_protocol(daily_deal.targeturl),:target => :blank, :class => 'btn btn-success')%></td>
+	        <!--<td><%= daily_deal.DealerID %></td>
+	        <td><%= daily_deal.DealerType %></td>
+	        <td><%= daily_deal.IsDealerFavorite %></td>
+	        <td><%=l daily_deal.created_at %></td>-->
+			<%if can? :update, daily_deal%>
+	        <td>
+	          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+	                      edit_daily_deal_path(daily_deal), :class => 'btn btn-mini' %>
+	          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+	                      daily_deal_path(daily_deal),
+	                      :method => :delete,
+	                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+	                      :class => 'btn btn-mini btn-danger' %>
+	         <%end%>
+	        </td>
+	      </tr>
+	      <%end%>
+	    <% end %>
+	  </tbody>
+	</table>
+	</div>
+	</div>
+</div>
 
-<br />
-
-<%= link_to 'New Daily deal', new_daily_deal_path %>
+<!--
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_daily_deal_path,
+            :class => 'btn btn-primary' %>  -->

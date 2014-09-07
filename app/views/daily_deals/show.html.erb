@@ -1,25 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = DailyDeal -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <b>Dealername:</b>
-  <%= @daily_deal.DealerName %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:DealerName) %>:</strong></dt>
+  <dd><%= @daily_deal.DealerName %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DealerID) %>:</strong></dt>
+  <dd><%= @daily_deal.DealerID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:DealerType) %>:</strong></dt>
+  <dd><%= @daily_deal.DealerType %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:IsDealerFavorite) %>:</strong></dt>
+  <dd><%= @daily_deal.IsDealerFavorite %></dd>
+</dl>
 
-<p>
-  <b>Dealerid:</b>
-  <%= @daily_deal.DealerID %>
-</p>
-
-<p>
-  <b>Dealertype:</b>
-  <%= @daily_deal.DealerType %>
-</p>
-
-<p>
-  <b>Dealerfavorite?:</b>
-  <%= @daily_deal.DealerFavorite? %>
-</p>
-
-
-<%= link_to 'Edit', edit_daily_deal_path(@daily_deal) %> |
-<%= link_to 'Back', daily_deals_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              daily_deals_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_daily_deal_path(@daily_deal), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              daily_deal_path(@daily_deal),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

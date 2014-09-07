@@ -1,33 +1,39 @@
-<%= form_for(@deal_finder) do |f| %>
-  <% if @deal_finder.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@deal_finder.errors.count, "error") %> prohibited this deal_finder from being saved:</h2>
-
-      <ul>
-      <% @deal_finder.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @deal_finder, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :FinderName, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :FinderName, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :FinderID, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :FinderID, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :FinderType, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :FinderType, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :IsFinderFavorite, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :IsFinderFavorite, :class => 'check_box' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :FinderName %><br />
-    <%= f.text_field :FinderName %>
+  <div class="control-group">
+    <%= f.label :targeturl, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :targeturl, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :FinderID %><br />
-    <%= f.number_field :FinderID %>
-  </div>
-  <div class="field">
-    <%= f.label :FinderType %><br />
-    <%= f.number_field :FinderType %>
-  </div>
-  <div class="field">
-    <%= f.label :FinderFovorite? %><br />
-    <%= f.check_box :FinderFovorite? %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                deal_finders_path, :class => 'btn' %>
   </div>
 <% end %>

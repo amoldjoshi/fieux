@@ -1,5 +1,6 @@
 class DealFindersController < ApplicationController
-  # GET /deal_finders
+ load_and_authorize_resource #Amol added dont know why
+	 # GET /deal_finders
   # GET /deal_finders.json
   def index
     @deal_finders = DealFinder.all

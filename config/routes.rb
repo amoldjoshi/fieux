@@ -1,4 +1,10 @@
 Fieux::Application.routes.draw do
+  
+   root :controller => 'weekly_adds', :action => :index
+   
+   devise_for :users
+
+
   get "pages/home"
 
   get "pages/contact"
@@ -8,15 +14,8 @@ Fieux::Application.routes.draw do
   match '/about',   :to => 'pages#about'
 	
   resources :deal_finders
-
-
   resources :weekly_adds
-
-
   resources :daily_deals
-
-
-  devise_for :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

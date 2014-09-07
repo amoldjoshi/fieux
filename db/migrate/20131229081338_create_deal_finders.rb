@@ -4,7 +4,7 @@ class CreateDealFinders < ActiveRecord::Migration
       t.string :FinderName
       t.integer :FinderID
       t.integer :FinderType
-      t.boolean :FinderFovorite?
+      t.boolean :IsFinderFovorite
 
       t.timestamps
     end

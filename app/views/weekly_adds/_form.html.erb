@@ -1,33 +1,39 @@
-<%= form_for(@weekly_add) do |f| %>
-  <% if @weekly_add.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@weekly_add.errors.count, "error") %> prohibited this weekly_add from being saved:</h2>
-
-      <ul>
-      <% @weekly_add.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @weekly_add, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :WeeklyAddName, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :WeeklyAddName, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :WeeklyAddID, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :WeeklyAddID, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :WeeklyAddType, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :WeeklyAddType, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :IsWeeklyFavorite, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :IsWeeklyFavorite, :class => 'check_box' %>
+    </div>
+  </div>
+  
+    <div class="control-group">
+    <%= f.label :targeturl, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :targeturl, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :WeeklyAddName %><br />
-    <%= f.text_field :WeeklyAddName %>
-  </div>
-  <div class="field">
-    <%= f.label :WeeklyAddID %><br />
-    <%= f.number_field :WeeklyAddID %>
-  </div>
-  <div class="field">
-    <%= f.label :WeeklyAddType %><br />
-    <%= f.number_field :WeeklyAddType %>
-  </div>
-  <div class="field">
-    <%= f.label :WeeklyFavorite? %><br />
-    <%= f.check_box :WeeklyFavorite? %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                weekly_adds_path, :class => 'btn' %>
   </div>
 <% end %>

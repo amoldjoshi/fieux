@@ -1,3 +1,3 @@
 class DealFinder < ActiveRecord::Base
-  attr_accessible :FinderFovorite?, :FinderID, :FinderName, :FinderType
+  attr_accessible :IsFinderFavorite, :FinderID, :FinderName, :FinderType, :targeturl
 end

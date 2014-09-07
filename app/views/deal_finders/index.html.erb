@@ -1,29 +1,98 @@
-<h1>Listing deal_finders</h1>
+<%- model_class = DealFinder -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
 
-<table>
-  <tr>
-    <th>Findername</th>
-    <th>Finderid</th>
-    <th>Findertype</th>
-    <th>Finderfovorite?</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @deal_finders.each do |deal_finder| %>
-  <tr>
-    <td><%= deal_finder.FinderName %></td>
-    <td><%= deal_finder.FinderID %></td>
-    <td><%= deal_finder.FinderType %></td>
-    <td><%= deal_finder.FinderFovorite? %></td>
-    <td><%= link_to 'Show', deal_finder %></td>
-    <td><%= link_to 'Edit', edit_deal_finder_path(deal_finder) %></td>
-    <td><%= link_to 'Destroy', deal_finder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<div class ="container">
+<div class ="row">
+	<div class ="span4">
+	<table class="table table-striped table-bordered">
+		  <!--<thead>
+		    <tr>
+		      <th><%= model_class.human_attribute_name(:id) %></th>
+		      <th><%= model_class.human_attribute_name(:FinderName) %></th>
+		      <th><%= model_class.human_attribute_name(:targeturl)%></th>
+		      <th><%= model_class.human_attribute_name(:FinderID) %></th>
+		      <th><%= model_class.human_attribute_name(:FinderType) %></th>
+		      <th><%= model_class.human_attribute_name(:IsFinderFavorite) %></th>
+		      <th><%= model_class.human_attribute_name(:created_at) %></th>
+		      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+		    </tr>
+		  </thead>-->
+	  <tbody>
+	    <% @deal_finders.each do |deal_finder| %>
+	    <% i = 0 %>
+			<% if deal_finder.FinderID ==1%>	 
+	      <tr>
+			<%if can? :update, deal_finder%>
+	      		<td><%= link_to deal_finder.id, deal_finder_path(deal_finder) %></td>
+	      	<%end%>
+	      	
+	      	<td><%= i = i + 1%></td>
+	        <td><%= deal_finder.FinderName %></td>
+			<td><%=  link_to('Lets Go!', url_with_protocol(deal_finder.targeturl),:target => :blank, :class => 'btn btn-success')%></td>
+	        <!--<td><%= deal_finder.FinderID %></td>
+	        <td><%= deal_finder.FinderType %></td>
+	        <td><%= deal_finder.IsFinderFavorite %></td>
+	        <td><%=l deal_finder.created_at %></td>-->
+			<%if can? :update, deal_finder%>
+	        <td>
+	          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+	                      edit_deal_finder_path(deal_finder), :class => 'btn btn-mini' %>
+	          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+	                      deal_finder_path(deal_finder),
+	                      :method => :delete,
+	                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+	                      :class => 'btn btn-mini btn-danger' %>
+	         <%end%>
+	        </td>
+	      </tr>
+	    <% end %>
+	    <%end%>
+	  </tbody>
 </table>
+	</div>
+	<div class = "span4 offset1">
+	<table class="table table-striped table-bordered">
+	  <tbody>
+	    <% @deal_finders.each do |deal_finder| %>
+	    <% j = 0 %>
+			<% if deal_finder.FinderID ==2%>	 
+	      <tr>
+			<%if can? :update, deal_finder%>
+	      		<td><%= link_to deal_finder.id, deal_finder_path(deal_finder) %></td>
+	      	<%end%>
+	      	
+	      	<td><%= j = j + 1 %></td>
+	        <td><%= deal_finder.FinderName %></td>
+			<td><%=  link_to('Lets Go!', url_with_protocol(deal_finder.targeturl),:target => :blank, :class => 'btn btn-success')%></td>
+	        <!--<td><%= deal_finder.FinderID %></td>
+	        <td><%= deal_finder.FinderType %></td>
+	        <td><%= deal_finder.IsFinderFavorite %></td>
+	        <td><%=l deal_finder.created_at %></td>-->
+			<%if can? :update, deal_finder%>
+	        <td>
+	          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+	                      edit_deal_finder_path(deal_finder), :class => 'btn btn-mini' %>
+	          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+	                      deal_finder_path(deal_finder),
+	                      :method => :delete,
+	                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+	                      :class => 'btn btn-mini btn-danger' %>
+	         <%end%>
+	        </td>
+	      </tr>
+	    <% end %>
+	    <%end%>
+	  </tbody>
+	</table>
+	</div>
+  </div>
+ </div>
+		
 
-<br />
+<!--<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_deal_finder_path,
+            :class => 'btn btn-primary' %>-->
 
-<%= link_to 'New Deal finder', new_deal_finder_path %>
