@@ -5,8 +5,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 
-#require 'rake'
 require 'rake/dsl_definition'
+
 #Added rakefile Amol. Remove line above this one.
 class Rails::Application 
   include Rake::DSL 
