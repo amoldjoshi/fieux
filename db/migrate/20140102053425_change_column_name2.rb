@@ -1,6 +1,6 @@
 class ChangeColumnName2 < ActiveRecord::Migration
   def up
-  	rename_column :deal_finders, :FinderFovorite?, :IsFinderFavorite
+  	rename_column :deal_finders, :IsFinderFovorite, :IsFinderFavorite
   end
 
   def down
