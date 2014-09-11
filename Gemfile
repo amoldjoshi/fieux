@@ -29,3 +29,4 @@ end
 
 gem 'meta_search'
 gem 'will_paginate'
+gem 'heroku'
