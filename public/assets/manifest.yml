@@ -1,12 +1,20 @@
 ---
+bg1.jpg: bg1-32fc1cac483333c514acf36c6efc72d8.jpg
+bg1/index.jpg: bg1-32fc1cac483333c514acf36c6efc72d8.jpg
+bg4.jpg: bg4-b380f3c410bcb47e14552f605355a105.jpg
+bg4/index.jpg: bg4-b380f3c410bcb47e14552f605355a105.jpg
+facebook.jpg: facebook-9a17bf07f64ac82e746dd5193c686647.jpg
+facebook/index.jpg: facebook-9a17bf07f64ac82e746dd5193c686647.jpg
 facebook.png: facebook-ccd1fcaadd02947f39aea7012724fd7f.png
 facebook/index.png: facebook-ccd1fcaadd02947f39aea7012724fd7f.png
 google.png: google-49ce51e4d980c9f3fe0e6c9014576f20.png
 google/index.png: google-49ce51e4d980c9f3fe0e6c9014576f20.png
 iconhd.png: iconhd-8d795742b68b0df0f51c4e790ed8ce33.png
 iconhd/index.png: iconhd-8d795742b68b0df0f51c4e790ed8ce33.png
-logo.png: logo-7b00484d580c9d4905c6a945065cb48e.png
-logo/index.png: logo-7b00484d580c9d4905c6a945065cb48e.png
+logo.png: logo-a2e7ff82220f19e9a13714ec42adfc3f.png
+logo/index.png: logo-a2e7ff82220f19e9a13714ec42adfc3f.png
+logo_d.png: logo_d-a2e7ff82220f19e9a13714ec42adfc3f.png
+logo_d/index.png: logo_d-a2e7ff82220f19e9a13714ec42adfc3f.png
 mail.png: mail-60c79f6aac5df61ca35bb028b2b78bd8.png
 mail/index.png: mail-60c79f6aac5df61ca35bb028b2b78bd8.png
 pinterest.png: pinterest-de7078fd0c2b3dfe41aad3fe4277ba48.png
@@ -15,8 +23,8 @@ twitter.png: twitter-88781d84981c277d8280805c4c687bfd.png
 twitter/index.png: twitter-88781d84981c277d8280805c4c687bfd.png
 application.js: application-daef9ec2d56d27dd04c43d9c1d89ce69.js
 application/index.js: application-daef9ec2d56d27dd04c43d9c1d89ce69.js
-application.css: application-ac5d7777d590f1ac66a50527ec473386.css
-application/index.css: application-ac5d7777d590f1ac66a50527ec473386.css
+application.css: application-35ba66f236a37b13c13ba76323f6372e.css
+application/index.css: application-35ba66f236a37b13c13ba76323f6372e.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 fontawesome-webfont.eot: fontawesome-webfont-009f6d1f667cc42c25e712ab3429cbc7.eot
