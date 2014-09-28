@@ -21,8 +21,9 @@
 		    </tr>
 		  </thead>-->
 	  <tbody>
+	  	<% i = 0 %>
 	    <% @deal_finders.each do |deal_finder| %>
-	    <% i = 0 %>
+
 			<% if deal_finder.FinderID ==1%>	 
 	      <tr>
 			<%if can? :update, deal_finder%>
@@ -56,8 +57,8 @@
 	<div class = "span4 offset1">
 	<table class="table table-striped table-bordered">
 	  <tbody>
-	    <% @deal_finders.each do |deal_finder| %>
 	    <% j = 0 %>
+	    <% @deal_finders.each do |deal_finder| %>
 			<% if deal_finder.FinderID ==2%>	 
 	      <tr>
 			<%if can? :update, deal_finder%>
